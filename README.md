@@ -1,70 +1,40 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##启动步骤
+    配置所需环境
+        npm install
+        yarn install
+        yarn create react-app mini_toutiao
+    下载所需包
+        yarn add antd
+        yarn add react-router-dom
+        yarn add axios
+    运行项目
+        yarn start
+##目录结构
+    |— node_modules
+    |- public
+    |- src
+    | |-pages //存放页面的所有组件
+    | |-Home  //存放未登录的layout布局
+    | |-AuthorHome //存放登录后页面的layout布局
+    | |-reportWebVitals.js
+    | └-index.js//入口文件
+    后端目录见轻服务云函数 https://qingfuwu.cn/dashboard
+    账号:zoclpa.tech
+    密码:YMJZoJFABI
+##团队成员的分工
+    张宇昊:前端设计
+    刘勇:后端接口开发及数据库设计
+    肖靖阳:前端优化
+##是否实现了加分项
+    在文章详情页实现了评论功能
+##页面路由
+    路由方式             触发时机
+    初始化               项目打开第一个页面
+    文章浏览             调用API:getListOfArticle  Route path="/home/article" || "/author_home/articleList"                                                
+    文章管理             Route path="/author_home/articleManage"
+    撰写文章             Route path="/author_home/write"  
+    编辑文章             Route path="/author_home/edit"
+    文章详情             Route path="/home/articleContent" || "/author_home/articleContent"
+##操作说明
+    未登录     可浏览文章，注册和登录账户
+    登陆后     可浏览文章，管理个人文章，撰写文章，修改文章
